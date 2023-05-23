@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Unilocker | Token Locker</title>
+  <meta content="Token vesting for Ethereum, Polygon and Binance Smart Chain network. Lock tokens for Uniswap, Quickswap and PancakeSwap." name="description">
+  <meta content="Token Vesting, Token Locker, ERC20 Token Lock, BEP20 Token Lock" name="keywords">
+  <meta name="csrf-token" content="g68IHV0Jc1Ui4CI9G1U9VvArHWJNXNCyypyRD1Sk5j82bFYLDB7Fdxg21ZgZHLYP">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZV3S0GQKQ8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZV3S0GQKQ8');
+  </script>
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.447ad84c8aad.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.3ba0a979859f.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="preload" as="font" href="/static/assets/vendor/icofont/fonts/icofont.50a4ab76e700.woff2" type="font/woff2" crossorigin="anonymous">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.d432e4222814.css" rel="stylesheet">
+  <link href="/static/assets/vendor/icofont/icofont.min.134b8dae50ca.css" rel="stylesheet">
+  <link href="/static/assets/vendor/boxicons/css/boxicons.min.a0e66e2b913f.css" rel="stylesheet">
+  <link href="/static/assets/vendor/venobox/venobox.a4f15edaa0fa.css" rel="stylesheet">
+  <link href="/static/assets/vendor/owl.carousel/assets/owl.carousel.min.761bea69e4eb.css" rel="stylesheet">
+  <link href="/static/assets/vendor/aos/aos.847da8fca806.css" rel="stylesheet">
+  <link href="/static/assets/vendor/flatpickr/flatpickr.min.6e17f044632a.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/assets/css/style.3a81306fdbdf.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <img style="height: 40px;width: 32px; margin-top: -10px;" src="/static/assets/img/logo.4512c40b284c.jpg" alt="" class="img-fluid"><h1 class="logo mr-auto"><a href="/"> &nbsp; Unilocker</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/#services-locker">Liquidity Locker</a></li>
+          <li><a href="#services-locker">Token Vesting</a></li>
+          <li><a href="#contact">Contact</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1>Smart Liquidity Locker and Token Vesting for Ethereum, Polygon and BSC</h1>
+          <br>
+          <div class="d-flex">
+            <a href="#services-locker" class="btn-get-started scrollto">Get Started</a>
+          </div>
+        </div>
+        <!--
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+        </div>
+        -->
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+ 
+    <section id="services-locker" class="services-locker section-bg">
+      <div class="container">
+        <div class="section-title" data-aos="" style="margin-top: 20px;">
+          <h2>Token Locker</h2>
+          <p>Lock tokens. Supports BEP20 tokens on Binance Smart Chain. Support for Ethereum and Polygon coming soon.</p>
+        </div> 
+        <center>
+        <div class="form-group row ">
+          <div class="col-lg-12">
+            <button class="btn btn-primary" id="newlock_connect_wallet">
+              Connect wallet
+            </button>
+            <h6 id="newlock_connect_wallet_msg" style="display:none">              
+            </h6>
+            <h6 id="newlock_connected_wallet" style="display:none">
+              Connected wallet: <span id="newlock_connected_wallet_address"></span>
+            </h6>
+          </div>
+        </div>
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-primary active">
+            <input type="radio" name="network-options" id="network-eth" autocomplete="off"  value=0 disabled> Ethereum <small>(Coming soon!)</small>
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="network-options" id="network-polygon" autocomplete="off" value=1 disabled> Polygon <small>(Coming soon!)</small>
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="network-options" id="network-bsc" autocomplete="off" value=2 checked> BSC
+          </label>
+        </div>
+      </center>
+        
+        <div class="row">
+          <div class="col-lg-8 offset-lg-3 mt-2 mb-tg-0 order-2 order-lg-1">
+            <ul class="nav nav-tabs flex-row">
+              <li class="nav-item mt-2" data-aos="">
+                <a class="nav-link active show" data-toggle="tab" href="#tab-1">
+                  <h4>New Token Lock</h4>
+                </a>
+              </li>
+              <li class="nav-item mt-2" data-aos="" data-aos-delay="100">
+                <a class="nav-link" data-toggle="tab" href="#tab-2"  id="lock_manage_tab_link">
+                  <h4>My Locks</h4>
+                </a>
+              </li>
+              <li class="nav-item mt-2" data-aos="" data-aos-delay="100">
+                <a class="nav-link" data-toggle="tab" href="#browse-locks" >
+                  <h4>All Locks</h4>
+                </a>
+              </li>
+
+              <li class="nav-item mt-2" data-aos="" data-aos-delay="100">
+                <a class="nav-link" data-toggle="tab" href="#certificate"  style="display:none">
+                  <h4>Lock Certificate</h4>
+                </a>
+              </li>
+
+
+            </ul>
+          </div>
+          <div class="col-lg-8 offset-lg-3 order-1 order-lg-2" data-aos="">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="main-box">
+                  <div class="container inner-box">
+                      <div class="Input-Wrapper">
+                          <div class="Input-title text-left">
+                              <b>Token Address</b>
+                          </div>
+                          <div class="content-wrapper first-box">
+                              <div class="inputText">
+                                  <input id="newlock_lpaddress" class="input-field" placeholder="0x42981d0bfbAf196529376EE702F2a9Eb9092fcB5" disabled/>
+                                  <p class="error-text text-left" style="display:none">Please enter valid data</p>
+                              </div>
+                              <img id="newlock_lptoken_info_spinner" src="/static/assets/img/inputloader.d36c0042a12a.gif" class="right-input-loading" style="display:none"/> 
+                              <div class="first-right-box" id="newlock_lptoken_info" style="display:block">
+                                  
+                                Please connect wallet to get started
+                                 
+                              </div>
+                          </div>
+                         
+                      </div>
+                      <div class="Input-Wrapper">
+                          <div class="Input-title text-left">
+                              <b>Token Amount</b>
+                          </div>
+                          <div class="content-wrapper">
+                              <div class="top-Bar">
+                                  <!-- <div class="left-Side" contenteditable="true">
+                                      00
+                                  </div> -->
+                                  <div class="second-inputinner inputText1">
+                                      <input  id="newlock_amount" placeholder="0" class="input-field">
+                                      <p class="error-text text-left" style="display:none">Please enter a valid data</p>
+                                  </div>
+                                  <div class="right-Side">
+                                      <div class="right-head">
+                                          Balance
+                                      </div>
+                                      <div class="right-balance" id="newlock_lptoken_balance_info">                                          
+                                          0
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="slidecontainer">
+                                  <input type="range" min="0" max="100" value="0" class="slider" onchange="sliderChange()" id="myRange">
+                              </div>
+                              <div class="slide-bottom">
+                                  <div class="slide-percentage" id="slide-percentage">
+                                      0%
+                                  </div>
+                              </div>
+                              <div class="slide-percent-bottom">
+                                  <div class="col-lg-12 row slide-percent-head">
+                                      <div class="col-xs-6 col-sm-3 percenttag">
+                                          <div class="percentageDiv" onclick="percentSwitch('25')">
+                                              25%
+                                          </div>
+                                      </div>
+                                      <div class="col-xs-6 col-sm-3 percenttag">
+                                          <div class="percentageDiv" onclick="percentSwitch('50')">
+                                              50%
+                                          </div>
+                                      </div>
+                                      <div class="col-xs-6 col-sm-3 percenttag">
+                                          <div class="percentageDiv" onclick="percentSwitch('75')">
+                                              75%
+                                          </div>
+                                      </div>
+                                      <div class="col-xs-6 col-sm-3 percenttag">
+                                          <div class="percentageDiv" onclick="percentSwitch('100')">
+                                              Max
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                      </div>
+                      <div class="Input-Wrapper">
+                          <div class="Input-title text-left">
+                              <b>Lock Period</b>
+                          </div>
+                          <div class="content-wrapper">
+                              <div class="top-Bar">
+                                  <div class="left-date-Side">
+                                      <!-- <div class="date-head">
+                                          26th Mar 2022 6:27 PM
+                                      </div> -->
+                                      <input id="newlock_unlocktime" class="date-head" placeholder="2021-10-10 10:10">
+                                      <p class="error-text text-left" style="display:none">Please enter a valid data</p>
+                                  </div>
+                                  <div class="right-Side">
+                                      <div class="right-head" id="newlock_unlocktime_info">
+                                          Will lock for 1 day
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="slidecontainer">
+                                  <input type="range" min="0" max="100" value="0" class="slider" onchange="sliderChangeMonth()" id="myRangeMonth">
+                              </div>
+                              <div class="slide-bottom">
+                                  <div class="slide-percentage" id="slide-percentage-month">
+                                      0%
+                                  </div>
+                              </div>
+                              <div class="slide-percent-bottom">
+                                  <div class="col-lg-12 row slide-percent-head">
+                                      <div class="col-xs-12 col-sm-3 percenttag">
+                                          <div class="percentageDiv" onclick="monthDiv('5')">
+                                              3 Months
+                                          </div>
+                                      </div>
+                                      <div class="col-xs-12 col-sm-3 percenttag">
+                                          <div class="percentageDiv" onclick="monthDiv('10')">
+                                              6 Months
+                                          </div>
+                                      </div>
+                                      <div class="col-xs-12 col-sm-3 percenttag">
+                                          <div class="percentageDiv" onclick="monthDiv('20')">
+                                              1 Year
+                                          </div>
+                                      </div>
+                                      <div class="col-xs-12 col-sm-3 percenttag">
+                                          <div class="percentageDiv" onclick="monthDiv('100')">
+                                              5 Years
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="text-left">
+                            <input type="checkbox" id="newlock_enablevesting_flag">Enable Vesting<small> (Tokens will vest equally after unlock date till vesting date.)</small>
+                          </div>
+                          <br/>
+                          <div class="content-wrapper">
+                            <div class="top-Bar">
+                                <div class="left-date-Side">
+                                    <!-- <div class="date-head">
+                                        26th Mar 2022 6:27 PM
+                                    </div> -->
+                                    <input id="newlock_unlocktime_vesting" class="date-head" placeholder="2021-10-10 10:10" disabled>
+                                    <p class="error-text text-left" style="display:none">Please enter a valid data</p>
+                                </div>
+                                <div class="right-Side">
+                                    <div class="right-head" id="newlock_unlocktime_vesting_info">
+                                        Vesting is not enabled
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slidecontainer">
+                                <input type="range" min="0" max="100" value="0" class="slider" onchange="sliderChangeMonthVesting()" id="myRangeMonthVesting" disabled>
+                            </div>
+                            <div class="slide-bottom">
+                                <div class="slide-percentage" id="slide-percentage-month-vesting">
+                                    0%
+                                </div>
+                            </div>
+                            <div class="slide-percent-bottom">
+                                <div class="col-lg-12 row slide-percent-head">
+                                    <div class="col-xs-12 col-sm-3 percenttag">
+                                        <div class="percentageDiv" id="vesting-button-1" onclick="">
+                                            3 Months
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 percenttag">
+                                        <div class="percentageDiv" id="vesting-button-2" onclick="">
+                                            6 Months
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 percenttag">
+                                        <div class="percentageDiv" id="vesting-button-3" onclick="">
+                                            1 Year
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 percenttag">
+                                        <div class="percentageDiv" id="vesting-button-4" onclick="">
+                                            5 Years
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="form-group row ">
+                        <div class="col-lg-8">                    
+                          <label style="margin-left:15px" id="newlock_fee_info"> Flat Fee:  0.15 BNB </label>
+
+                        </div>
+                      </div>
+                      <div class="form-group row ">
+                        <div class="col-lg-8">
+                            <center>
+                            <span id ="newlock_result_info">
+                            </span>
+                          </center>
+                        </div>
+                    </div>
+                      <div class="form-group row ">
+                          <div class="col-lg-3">
+                            <button class="btn btn-primary" id="newlock_lockbutton_approve" style="margin-bottom: 5px;" disabled>
+                              <span>Approve</span>
+                              <span id ="newlock_lockbutton_approve_spinner" style="display:none"
+                              class="spinner-border spinner-border-sm" role="status" 
+                              aria-hidden="true">
+                              </span>
+                            </button>
+                          </div>
+      
+                          <div class="col-lg-3">
+                            <button class="btn btn-primary" id="newlock_lockbutton" disabled>
+                              Lock
+                              <span id ="newlock_lockbutton_spinner" style="display:none"
+                              class="spinner-border spinner-border-sm" role="status" 
+                              aria-hidden="true">
+                              </span>
+                            </button>
+                          </div>
+                      </div>
+
+                </div>
+
+
+
+
+              </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="form-group row ">
+                <div class="col-lg-3 offset-lg-3">
+                <span id ="managelock_spinner" style="display:none"
+                  class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                </div>
+              </div>
+                
+                <ul class="lock-list text-left" id="lock-list">
+      
+                </ul>
+                
+              </div>
+            
+            
+            
+            
+            <div class="tab-pane col-lg-8 offset-lg-1" id="certificate" style="background-color:#ffe6e6;">
+              <div class="form-group row ">
+                <div class="col-lg-12">
+                  <center>
+                  <img src="/static/assets/img/certificatesmall.f377bd08319c.png">
+                  <b style="color:rgb(213, 0, 102);">Unilocker Certificate</b>
+                  <span id ="lock_certificate_spinner" style="display:block"
+                  class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  </center>
+                 </div>
+              </div>
+              <center>
+                <div class="form-group row ">
+                  <div class="col-lg-4 offset-lg-4">
+                  <img id="network-eth-logo" style="height: 70px; width:70px;display:none" src="/static/assets/img/eth-logo.86b356aa4636.png">
+                  <img id="network-polygon-logo" style="height: 70px; width:70px;display:none" src="/static/assets/img/polygon-logo.1ee4a1ab4dd9.png">
+                  <img id="network-bsc-logo" style="height: 70px; width:70px;display:none" src="/static/assets/img/bsc-logo.d2b6c0fb20f0.svg">
+                  </div>
+                  <div class="col-lg-4 offset-lg-4" id="certificate_network">                
+                  </div>
+                </div>
+              </center>
+              <br>
+              <center>
+                <div class="form-group row ">
+                  <div class="col-lg-4 offset-lg-4" >
+                  <img style="height: 100px;width: 90px;margin-bottom: -50px;margin-left: 16px; display:none" id="certificate_lockerhead" src="/static/assets/img/lockerhead.719a177e4d81.png">
+                </div>
+                </div>
+              </center>
+
+              <center>
+                <div class="form-group row ">
+                  <div class="col-lg-4 offset-lg-4" id="certificate_qrcode">                
+                  </div>
+                </div>
+              </center>
+              
+              <div class="form-group row ">
+                <div class="col-lg-12">
+                <center>
+                  <a target="_blank" href="" id="lock_certificate_lptoken">Token</a>:
+                  <b><a target="_blank" href="" id="lock_certificate_token0"><span >--</span></a></b>
+                </center>
+                </div>
+              </div>
+              
+              <div class="form-group row ">
+                <div class="col-lg-12" style="margin-left: 10px;">
+                  <center>
+                   <div id="lock_certificate_lockpercent" class="progress red"> 
+                     <span class="progress-left"> <span class="progress-bar"></span> 
+                      </span> <span class="progress-right"> 
+                        <span class="progress-bar"></span> 
+                      </span>
+                      <div class="progress-value">0%</div>
+                  </div>
+                </center>
+                </div>
+                <div class="col-lg-12">
+                <center>
+                  <div id="lock_certificate_status">
+                    <i class="icofont-close-circled" style="font-size: 30px;"></i> 
+                    Tokens Unlocked
+                  </div>
+                  </center>
+                </div>
+              </div>
+            
+              <div class="form-group row text-left">
+                <div class="col-lg-12">
+                <center> 
+                 &nbsp;<span id="lock_certificate_lockamount">---</span>
+                </center>
+                </div>
+            
+                <div class="col-lg-12">
+                  <center>
+                  <b>Lock Period:</b>&nbsp;<span id="lock_certificate_unlocktime"  style="list-style: none" >--</span>
+                </center>
+                </div>
+              </div>
+
+            </div>
+            
+            <div class="tab-pane" id="browse-locks">
+              <div class="form-group row ">
+                <div class="col-lg-3 offset-lg-3">
+                <span id ="browselock_spinner" style="display:none"
+                  class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                </div>
+              </div>
+              <ul class="lock-list text-left" id="browse-locks-list" style="list-style: none">
+                <li>No Locks!</li>
+              </ul>             
+
+            </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+    <section id="vesting" class="services-locker section">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Liquidity Locker</h2>
+          <p>Lock liquidity pool tokens. Supports Ethereum (Uniswap V2), Polygon(Quickswap), BSC(PancakeSwap)</p>
+          </p>          
+        </div>
+
+        <div class="form-group row">    
+          <div class="col-lg-6 offset-lg-3">
+              <center>
+              <button class="btn btn-primary" target="_blank" onclick="window.open('https://unilocker.app/#services-locker')">Launch Liquidity Locker App</button>
+              </center>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <span>Contact</span>
+          <h2>Contact</h2>
+          <p>Please send us your queries and requests throught the form below:</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+           
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>support@unilocker.app</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="/api/contact/" method="post" role="form" class="php-email-form"><input type="hidden" name="csrfmiddlewaretoken" value="g68IHV0Jc1Ui4CI9G1U9VvArHWJNXNCyypyRD1Sk5j82bFYLDB7Fdxg21ZgZHLYP">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+
+      <div class="container">
+
+        <div class="row  justify-content-center">
+          <div class="col-lg-6">
+            <!-- <h3>unilocker</h3> -->
+            <p></p>
+          </div>
+        </div>
+        <!--
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+        -->
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Unilocker</span></strong>. All Rights Reserved
+      </div>
+      <center><a target="_blank" href="/terms">Terms and Conditions</a></div></center>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/jquery/jquery.min.dc5e7f18c8d3.js" ></script>
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.f81d0a170504.js"> </script>
+  <script src="/static/assets/vendor/jquery.easing/jquery.easing.min.e2d41e5c8fed.js"></script>
+  <script src="/static/assets/vendor/php-email-form/validate.f9bace88d2c9.js"></script>
+  <script src="/static/assets/vendor/waypoints/jquery.waypoints.min.7d05f92297de.js"></script>
+  <script src="/static/assets/vendor/counterup/counterup.min.d0ce5cfe7008.js"></script>
+  <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.2afcff647ed2.js"></script>
+  <script src="/static/assets/vendor/venobox/venobox.min.64afe6ce2a81.js"></script>
+  <script src="/static/assets/vendor/owl.carousel/owl.carousel.min.f416f9031fef.js"></script>
+  <script src="/static/assets/vendor/web3/web3.min.8ffb05b9bc49.js"></script>
+  <script src="/static/assets/vendor/web3modal/index.aac4569bbff2.js"></script>
+  <script src="/static/assets/vendor/evm-chains/index.min.103cf7a3766e.js"></script>
+  <script src="/static/assets/vendor/walletconnect/web3provider.min.ecd0acbd0f23.js"></script>
+  <script src="/static/assets/vendor/flatpickr/flatpickr.38b5005544b4.js"></script>
+  <script src="/static/assets/vendor/moment/moment.min.5c158b940513.js"></script>  
+  <script src="/static/assets/vendor/qrcode/qrcode.min.517b55d3688c.js"></script>  
+  <script src="/static/assets/vendor/keyframes/keyframes.min.ab7f6a43dd13.js"></script>
+
+  <!-- Template Main JS File -->
+-  
+-  <script src="/static/CACHE/js/output.b0ba9fed8b55.js"></script>
+
+  <script>
+
+    $.ajaxPrefilter(function(options, originalOptions, jqXHR){
+    if (options.type.toLowerCase() === "post") {
+      jqXHR.setRequestHeader('X-CSRFToken', $('meta[name="csrf-token"]').attr('content'));
+    }
+  });
+
+function sliderChangeWithdraw(){
+    //$('#slide-percentage')[0].innerText = $('#myRange')[0].value + "%";
+    percentSwitchWithdraw($('#myRangeWithdraw')[0].value);
+}
+
+
+function percentSwitchWithdraw(percent){
+    $('#myRangeWithdraw')[0].value = percent;
+    $('#slide-percentage-withdraw')[0].innerText = percent + "%"; 
+
+    if (percent == 100){
+        $("#managelock_withdraw_input").val($("#managelock_withdraw_available_display span").text());
+    }
+    else{
+        var amount = parseFloat($("#managelock_withdraw_available_display span").text());
+        var dec_count = decimalCount(amount);
+        if (dec_count < 2){ dec_count = 2;}
+
+        var amount = percent * amount /100;
+        // TODO: can use the actual token decimals instead of hardcoding to 6
+        if (decimalCount(amount) > dec_count){
+            amount = amount.toFixed(dec_count);
+        }
+        $("#managelock_withdraw_input").val(amount);
+
+    }
+}
+
+
+
+function sliderChangeIncrement(){
+    //$('#slide-percentage')[0].innerText = $('#myRange')[0].value + "%";
+    percentSwitchIncrement($('#myRangeIncrement')[0].value);
+}
+
+
+function percentSwitchIncrement(percent){
+    $('#myRangeIncrement')[0].value = percent;
+    $('#slide-percentage-increment')[0].innerText = percent + "%"; 
+
+    if (percent == 100){
+        $("#managelock_increment_input").val($("#managelock_increment_available_display span").text());
+    }
+    else{
+        var amount = parseFloat($("#managelock_increment_available_display span").text());
+        var dec_count = decimalCount(amount);
+        if (dec_count < 2){ dec_count = 2;}
+
+        var amount = percent * amount /100;
+        // TODO: can use the actual token decimals instead of hardcoding to 6
+        if (decimalCount(amount) > dec_count){
+            amount = amount.toFixed(dec_count);
+        }
+        $("#managelock_increment_input").val(amount);
+
+    }
+}
+
+function sliderChangeMonthExtend(){
+    //$('#slide-percentage-month')[0].innerText = $('#myRangeMonth')[0].value + "%";
+    monthDivExtend($('#myRangeMonthExtend')[0].value);
+}
+
+
+function monthDivExtend(percent){
+    $('#myRangeMonthExtend')[0].value = percent;
+    $('#slide-percentage-month-extend')[0].innerText = percent + "%"; 
+
+    var new_date = new Date();
+    new_date.setMonth( new_date.getMonth() + percent*60/100);
+    document.querySelector("#managelock_extend_input")._flatpickr.setDate(new_date, true);
+ 
+
+}
+
+
+
+function sliderChange(){
+    //$('#slide-percentage')[0].innerText = $('#myRange')[0].value + "%";
+    percentSwitch($('#myRange')[0].value);
+}
+
+function sliderChangeMonth(){
+    //$('#slide-percentage-month')[0].innerText = $('#myRangeMonth')[0].value + "%";
+    monthDiv($('#myRangeMonth')[0].value);
+}
+
+function sliderChangeMonthVesting(){
+    //$('#slide-percentage-month')[0].innerText = $('#myRangeMonth')[0].value + "%";
+    monthDivVesting($('#myRangeMonthVesting')[0].value);
+}
+
+
+function sliderChangeMonthExtendVesting(){
+    //$('#slide-percentage-month')[0].innerText = $('#myRangeMonth')[0].value + "%";
+    monthDivExtendVesting($('#myRangeMonthExtendVesting')[0].value);
+}
+
+
+
+function percentSwitch(percent){
+    $('#myRange')[0].value = percent;
+    $('#slide-percentage')[0].innerText = percent + "%"; 
+
+    if (percent == 100){
+        $("#newlock_amount").val($("#newlock_lptoken_balance_info").text());
+    }
+    else{
+        var amount = parseFloat($("#newlock_lptoken_balance_info").text());
+        var dec_count = decimalCount(amount);
+        if (dec_count < 2){ dec_count = 2;}
+
+        var amount = percent * amount /100;
+        // TODO: can use the actual token decimals instead of hardcoding to 6
+        if (decimalCount(amount) > dec_count){
+            amount = amount.toFixed(dec_count);
+        }
+        $("#newlock_amount").val(amount);
+
+    }
+}
+function monthDiv(percent){
+    $('#myRangeMonth')[0].value = percent;
+    $('#slide-percentage-month')[0].innerText = percent + "%"; 
+
+    var new_date = new Date();
+    new_date.setMonth( new_date.getMonth() + percent*60/100);
+    document.querySelector("#newlock_unlocktime")._flatpickr.setDate(new_date, true);
+ 
+
+}
+
+function monthDivVesting(percent){
+    $('#myRangeMonthVesting')[0].value = percent;
+    $('#slide-percentage-month-vesting')[0].innerText = percent + "%"; 
+
+    var new_date = new Date();
+    new_date.setMonth( new_date.getMonth() + percent*60/100);
+    document.querySelector("#newlock_unlocktime_vesting")._flatpickr.setDate(new_date, true);
+ 
+
+}
+
+function monthDivExtendVesting(percent){
+    $('#myRangeMonthExtendVesting')[0].value = percent;
+    $('#slide-percentage-month-extend-vesting')[0].innerText = percent + "%"; 
+
+    var new_date = new Date();
+    new_date.setMonth( new_date.getMonth() + percent*60/100);
+    document.querySelector("#managelock_unlocktime_extend_vesting")._flatpickr.setDate(new_date, true);
+ 
+
+}
+
+const decimalCount = num => {
+    // Convert to String
+    const numStr = String(num);
+    // String Contains Decimal
+    if (numStr.includes('.')) {
+       return numStr.split('.')[1].length;
+    };
+    // String Does Not Contain Decimal
+    return 0;
+ }
+
+  </script>
+
+</body>
+
+</html>
